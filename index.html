@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f7f5ef">
+	<title>Club Materos | Grabá tu idea</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="#" aria-label="Club Materos, inicio">
+			<span class="brand-mark" aria-hidden="true">cm</span>
+			<span>club<span class="brand-light">materos</span></span>
+		</a>
+		<nav aria-label="Navegación principal">
+			<a href="#catalogo">Catálogo</a>
+			<a href="#nosotros">Nuestra esencia</a>
+		</nav>
+		<a class="header-cta" href="#pedido">Mi pedido <span class="cart-count">0</span></a>
+	</header>
+
+	<main>
+		<section class="hero" aria-labelledby="hero-title">
+			<div class="hero-copy">
+				<p class="eyebrow"><span></span> HECHO PARA TUS RITUALES</p>
+				<h1 id="hero-title">Hay cosas que<br>se disfrutan <em>más</em><br>en compañía.</h1>
+				<p class="hero-description">Un buen mate, algo rico para tomar y ese ratito que es solo tuyo. Encontrá tus nuevos compañeros de todos los días.</p>
+				<a class="primary-button" href="#catalogo">Descubrí el catálogo <span aria-hidden="true">↓</span></a>
+				<div class="hero-note"><span class="note-avatars" aria-hidden="true">☀︎ ♡</span> Objetos para compartir buenos momentos</div>
+			</div>
+			<div class="hero-art" aria-label="Mate y termo sobre una mesa">
+				<div class="hero-sun"></div>
+				<div class="hero-badge"><span>✦</span><br>momentos<br>que abrigan</div>
+				<div class="hero-cup" aria-hidden="true"><span>🧉</span></div>
+				<div class="hero-thermos" aria-hidden="true"><span></span></div>
+				<div class="hero-leaf leaf-one" aria-hidden="true"></div>
+				<div class="hero-leaf leaf-two" aria-hidden="true"></div>
+				<div class="art-caption">EL RITUAL DE SIEMPRE, A TU MANERA</div>
+			</div>
+		</section>
+
+		<section id="catalogo" class="catalog-section" aria-labelledby="catalog-title">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">ELEGIDOS PARA VOS</p>
+					<h2 id="catalog-title">Pequeños grandes <em>rituales.</em></h2>
+				</div>
+				<p>Diseño y calidad para acompañarte<br>en cada pausa.</p>
+			</div>
+			<label class="catalog-search">
+				<span>Buscar en el catálogo</span>
+				<input id="catalog-search" type="search" placeholder="Ej.: mate de madera" autocomplete="off">
+			</label>
+			<div class="filters" role="group" aria-label="Filtrar productos">
+				<button class="filter-button active" type="button" data-filter="todos" aria-pressed="true">Todo <span id="product-count">56</span></button>
+				<button class="filter-button" type="button" data-filter="mates" aria-pressed="false">Mates</button>
+				<button class="filter-button" type="button" data-filter="termos" aria-pressed="false">Termos</button>
+				<button class="filter-button" type="button" data-filter="botellas" aria-pressed="false">Botellitas</button>
+			</div>
+
+			<div class="product-grid" aria-live="polite"></div>
+			<p class="catalog-empty" id="catalog-empty" hidden>No encontramos productos con esa búsqueda.</p>
+			<p class="catalog-note">Precios de referencia y fotos ilustrativas. Consultá disponibilidad y precio final antes de confirmar tu compra.</p>
+			<details class="photo-credits">
+				<summary>Créditos de las fotografías</summary>
+				<p>Las fotografías del catálogo son ilustrativas y se publican bajo la <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Licencia de Pexels</a>. Cada enlace abre la imagen original.</p>
+				<ul id="photo-credits-list"></ul>
+			</details>
+		</section>
+
+		<section id="pedido" class="order-section" aria-labelledby="order-title" hidden>
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">REVISÁ TU SELECCIÓN</p>
+					<h2 id="order-title">Tu <em>pedido.</em></h2>
+				</div>
+				<p>Los precios son estimados.<br>Confirmaremos stock y precio por WhatsApp.</p>
+			</div>
+			<div id="cart-items" class="cart-items" aria-live="polite"></div>
+			<p id="cart-storage-warning" class="checkout-status" role="status" aria-live="polite"></p>
+			<div id="cart-totals" class="cart-totals"></div>
+			<form id="checkout-form" class="checkout-form">
+				<h3>¿A quién contactamos?</h3>
+				<label for="checkout-name">Tu nombre</label>
+				<input id="checkout-name" name="name" type="text" maxlength="80" autocomplete="name" required>
+				<label for="checkout-area">Localidad o zona de entrega <span>(opcional)</span></label>
+				<input id="checkout-area" name="area" type="text" maxlength="100" autocomplete="address-level2">
+				<p class="checkout-disclaimer">No se realiza ningún cobro en esta web. El carrito queda guardado solo en este navegador. Al continuar, la vista previa del grabado se guarda en el servidor y WhatsApp incluye un enlace para que el comercio la vea; cualquiera que tenga ese enlace también podrá abrirlo. Revisá y enviá el mensaje; los productos, precios y disponibilidad se confirman por ese medio.</p>
+				<button class="primary-button checkout-submit" type="submit">Preparar pedido por WhatsApp <span aria-hidden="true">↗</span></button>
+				<p id="checkout-status" class="checkout-status" role="status" aria-live="polite"></p>
+				<a id="whatsapp-fallback" class="whatsapp-fallback" target="_blank" rel="noopener noreferrer" hidden>Abrir WhatsApp con mi pedido</a>
+			</form>
+		</section>
+
+		<section id="nosotros" class="closing-banner">
+			<span class="closing-icon" aria-hidden="true">☼</span>
+			<div><p class="eyebrow">UN CLUB, MUCHOS RITUALES</p><h2>Lo simple también<br>puede ser especial.</h2></div>
+			<a class="light-button" href="#catalogo">Encontrá tu favorito <span aria-hidden="true">↗</span></a>
+		</section>
+	</main>
+
+	<footer><a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">cm</span><span>club<span class="brand-light">materos</span></span></a><p>Hecho para acompañar tus mejores pausas.</p><span>© 2026 Club Materos</span></footer>
+
+	<div class="designer-modal" id="designer-modal" hidden>
+		<section class="designer-dialog" role="dialog" aria-modal="true" aria-labelledby="designer-title">
+			<header class="designer-header">
+				<div>
+					<p class="eyebrow">CLUB MATEROS · PERSONALIZACIÓN</p>
+					<h2 id="designer-title">Grabá tu idea</h2>
+				</div>
+				<button class="designer-close" type="button" aria-label="Cerrar configurador">×</button>
+			</header>
+			<div class="designer-progress" aria-label="Progreso del diseño">
+				<span class="active">01 <span>Producto</span></span>
+				<i></i>
+				<span>02 <span>Tu idea</span></span>
+				<i></i>
+				<span>03 <span>Diseño</span></span>
+			</div>
+			<p class="designer-error" id="designer-error" role="alert" hidden></p>
+			<section class="designer-step" data-step="1">
+				<h3>¿Qué querés personalizar?</h3>
+				<p class="designer-subtitle">Elegí el objeto que va a acompañar tus rituales.</p>
+				<label class="designer-search">
+					<span>Buscar producto</span>
+					<input id="designer-search" type="search" placeholder="Nombre del producto" autocomplete="off">
+				</label>
+				<div class="designer-products"></div>
+				<div class="designer-actions"><span></span><button class="primary-button" type="button" data-next="2">Continuar <span aria-hidden="true">→</span></button></div>
+			</section>
+			<section class="designer-step" data-step="2" hidden>
+				<h3>Contanos qué imaginás</h3>
+				<p class="designer-subtitle">Tu explicación y el texto exacto del grabado son cosas distintas; revisá bien las palabras.</p>
+				<p class="engraving-fee-notice"><strong>El grabado tiene un costo fijo de $20.000</strong>, que se suma al precio del producto.</p>
+				<label class="designer-label" for="designer-idea">La idea</label>
+				<textarea id="designer-idea" maxlength="800" placeholder="Ej.: Quiero grabar Juana y Francisca con un corazón y letra cursiva delicada."></textarea>
+				<div class="exact-copy">
+					<label class="designer-label" for="designer-exact">¿Qué palabras exactas querés grabar? <span aria-hidden="true">*</span></label>
+					<input id="designer-exact" type="text" maxlength="65" placeholder="Ej.: Juana y Francisca" required>
+					<p class="designer-hint">Solo este texto aparecerá en el diseño. Podés corregirlo en la vista previa.</p>
+				</div>
+				<div class="font-choices">
+					<p class="designer-label">Elegí un estilo de letra</p>
+					<div class="designer-fonts" role="group" aria-label="Estilo de letra">
+						<button type="button" class="selected" data-font="serif" aria-pressed="true">Elegante <span>Juana y Francisca</span></button>
+						<button type="button" data-font="sans" aria-pressed="false">Moderna <span>Juana y Francisca</span></button>
+						<button type="button" data-font="script" aria-pressed="false">Manuscrita <span>Juana y Francisca</span></button>
+						<button type="button" data-font="mono" aria-pressed="false">Monoespaciada <span>Juana y Francisca</span></button>
+					</div>
+				</div>
+				<div class="designer-uploads">
+					<div class="designer-upload">
+						<label class="designer-label" for="designer-files">Adjuntar referencias</label>
+						<p class="designer-hint">Imágenes o PDF de referencia; estos archivos no se suben automáticamente.</p>
+						<input id="designer-files" type="file" accept="image/*,.pdf,application/pdf" multiple>
+						<ul class="designer-file-list" id="designer-file-list"></ul>
+					</div>
+					<div class="designer-upload">
+						<p class="designer-label">Contanos con tu voz</p>
+						<p class="designer-hint">Podés grabar un audio o adjuntar uno.</p>
+						<button class="secondary-button" type="button" id="designer-record">Grabar audio</button>
+						<input id="designer-audio-file" type="file" accept="audio/*">
+						<p class="designer-audio-status" id="designer-audio-status" aria-live="polite"></p>
+						<audio id="designer-audio-player" controls hidden></audio>
+					</div>
+				</div>
+				<p class="designer-note">La vista previa del grabado se compartirá con un enlace en el pedido. Las imágenes o PDF de referencia siguen en tu dispositivo y, si querés incluirlos, tenés que adjuntarlos manualmente en WhatsApp.</p>
+				<div class="designer-actions"><button class="secondary-button" type="button" data-back="1">← Volver</button><button class="primary-button" type="button" data-next="3">Ver mi diseño <span aria-hidden="true">→</span></button></div>
+			</section>
+			<section class="designer-step" data-step="3" hidden>
+				<h3>Así podría quedar tu grabado</h3>
+				<p class="designer-subtitle">Vista vectorial de referencia. No es una fotografía del producto ni una aprobación de producción.</p>
+				<div class="engraving-price-breakdown" id="designer-price-breakdown" aria-live="polite"></div>
+				<div class="designer-preview">
+					<div class="designer-vector" id="designer-vector"></div>
+					<div class="designer-preview-caption" id="designer-preview-caption"></div>
+				</div>
+				<label class="designer-label" for="designer-preview-text">Texto exacto</label>
+				<input id="designer-preview-text" type="text" maxlength="65">
+				<p class="designer-hint">El texto ingresado aquí actualiza el diseño.</p>
+				<button class="primary-button designer-approve" type="button" id="designer-approve">Aprobar mi diseño</button>
+				<div class="designer-approved" id="designer-approved" hidden>
+					<strong>Vista previa lista para tu pedido</strong>
+					<p>Agregá esta personalización al pedido o descargá el vector y la ficha.</p>
+					<div><button class="secondary-button" type="button" id="designer-download-svg">Descargar SVG</button><button class="secondary-button" type="button" id="designer-download-summary">Descargar ficha</button></div>
+					<button class="primary-button add-engraving-to-cart" type="button" id="designer-add-to-cart">Agregar grabado al pedido · <span id="engraving-order-total"></span></button>
+				</div>
+				<p class="designer-note">El diseño es una referencia y debe validarse antes de producirlo. Al preparar el pedido se guardará la vista previa y el enlace se incluirá en el mensaje de WhatsApp.</p>
+				<div class="designer-actions"><button class="secondary-button" type="button" data-back="2">← Volver</button><button class="primary-button" type="button" id="designer-new">Empezar otro diseño</button></div>
+			</section>
+		</section>
+	</div>
+	<button class="designer-launcher" type="button" aria-haspopup="dialog"><span>Grabá tu idea</span><span aria-hidden="true">✎</span></button>
+	<a class="cart-launcher" href="#pedido" aria-label="Ver mi pedido">Mi pedido <span class="cart-count">0</span></a>
+
+	<script src="photo-credits.js"></script>
+	<script src="products.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
