@@ -2,17 +2,18 @@
   "name": "club-materos",
   "version": "1.0.0",
   "description": "Catálogo y pedidos personalizados de Club Materos",
-  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "vite",
+    "build": "vite build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "cors": "^2.8.6",
-    "express": "^5.3.0"
+    "@vercel/blob": "^2.0.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
   }
 }
