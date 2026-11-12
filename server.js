@@ -127,7 +127,9 @@ app.get('/script.js', (req, res) => res.sendFile(path.join(__dirname, 'script.js
 app.get('/products.js', (req, res) => res.sendFile(path.join(__dirname, 'products.js')));
 app.get('/photo-credits.js', (req, res) => res.sendFile(path.join(__dirname, 'photo-credits.js')));
 app.use('/assets', express.static(path.join(__dirname, 'assets'), { dotfiles: 'deny' }));
-
+app.post('/api/disenos', (req, res) => {
+  res.status(200).json({ success: true, message: "Diseño recibido correctamente" });
+});
 app.listen(port, () => {
 	console.log(`Club Materos disponible en http://localhost:${port}`);
 });
